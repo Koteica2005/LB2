@@ -71,4 +71,17 @@ namespace Quiz.Tests
             Assert.Equal(0, game.CorrectAnswers);
             Assert.Equal(1, game.TotalQuestionsAnswered);
         }
+
+               [Fact]
+        public void GiveAnswer_WhenCorrect_ShouldIncreaseScoreAndCounts()
+        {
+            var game = new QuizGame();
+            int points = 10;
+
+            game.GiveAnswer(true, points);
+
+            Assert.Equal(10, game.Score);
+            Assert.Equal(1, game.CorrectAnswers);
+            Assert.Equal(1, game.TotalQuestionsAnswered);
+        }
 }
