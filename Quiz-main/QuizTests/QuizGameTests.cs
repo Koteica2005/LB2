@@ -58,4 +58,17 @@ namespace Quiz.Tests
 
             Assert.Equal(100.0, game.CorrectAnswerPercentage, 2);
         }
+
+               [Fact]
+        public void GiveAnswer_WhenIncorrect_ShouldOnlyIncreaseTotalCount()
+        {
+            var game = new QuizGame();
+            int points = 10;
+
+            game.GiveAnswer(false, points);
+
+            Assert.Equal(0, game.Score);
+            Assert.Equal(0, game.CorrectAnswers);
+            Assert.Equal(1, game.TotalQuestionsAnswered);
+        }
 }
