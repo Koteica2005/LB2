@@ -48,4 +48,14 @@ namespace Quiz.Tests
 
             Assert.Equal(50.0, game.CorrectAnswerPercentage, 2);
           }
+        
+        [Fact]
+        public void CorrectAnswerPercentage_When1Of1_ShouldBe100()
+        {
+            var game = new QuizGame();
+
+            game.GiveAnswer(true, 10);
+
+            Assert.Equal(100.0, game.CorrectAnswerPercentage, 2);
+        }
 }
