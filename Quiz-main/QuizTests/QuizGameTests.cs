@@ -18,4 +18,11 @@ namespace Quiz.Tests
             Assert.Equal(0, game.TotalQuestionsAnswered);
             Assert.Equal(0.0, game.CorrectAnswerPercentage);
         }
+        
+        [Fact]
+        public void CorrectAnswerPercentage_WhenNoAnswers_ShouldBeZero()
+        {
+            var game = new QuizGame();
+            Assert.Equal(0.0, game.CorrectAnswerPercentage);
+        }
 }
