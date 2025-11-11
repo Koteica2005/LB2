@@ -3,6 +3,20 @@ using Quiz;
 
 namespace Quiz.Tests
 {
+[Fact]
+public void GiveAnswer_NoScoreOverflow()
+{
+    
+    var game = new QuizGame();
+    int nearMax = int.MaxValue - 5;
+    
+    game.GiveAnswer(true, nearMax);  
+    game.GiveAnswer(true, 100);      
+
+    Assert.Equal(int.MaxValue, game.Score);
+}
+
+
         [Fact]
         public void Restart_WhenCalled_ShouldResetAllStats()
         {
