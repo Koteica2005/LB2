@@ -20,21 +20,10 @@
                 if (isCorrect)
                 {
                     CorrectAnswers++;
-                    try
-        {
-            checked
-            {
-                Score += points;
-            }
-        }
-        catch (OverflowException)
-        {
-            Score = int.MaxValue;
-        }
-                   
+                    Score += points;
                 }
             }
-
+      
             public void Restart()
             {
                 Score = 0;
